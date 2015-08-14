@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+	<title> Repeat Counter </title>
+</head>
+<body>
+	<div class='container'>
+		<h1> Word Repeat Counter </h1>
+		<form action='/results'>
+			<div class='form-group'>
+				<div class='row'>
+					<div class='col-md-6'>
+						<label for='string'> Enter a string of words: </label>
+						<input id='string' name='string' class='form-control' type='text'><br>
+					</div>
+				</div>
+				<div class='row'>
+					<div class='col-md-6'>
+						<label for='word'> Enter a word to search in string: </label>
+						<input id='word' name='word' class='form-control' type='text'><br>
+					</div>					
+				</div>	
+			</div>
+			<button type='submit' class='btn-success'>Submit</button>
+		</form>
+	</div>
+</body>
+</html>

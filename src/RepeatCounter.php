@@ -6,7 +6,7 @@
         function countRepeats($string_of_words, $match_word)
         {
             // must be uncommented for use locally on Windows PCs
-            set_include_path('C:\\uniserver\\www\\word_repeat');
+            // set_include_path('C:\\uniserver\\www\\word_repeat');
 
             // Variable declaration
             $count = 0; 
@@ -24,7 +24,7 @@
             $string_array = explode(" ", $string_of_words);
 
             // Create dictionary array to verify match-word is an actual word
-            $dictionary_array = file('dictionary.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            $dictionary_array = file('./../dictionary.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
             if ( in_array($match_word, $dictionary_array) === true ) {
 
@@ -43,9 +43,12 @@
 
         }
 
-        //=================================================================
-        //  Function for stripping all punctuation and spaces from string
-        //-----------------------------------------------------------------
+
+        //==========================================================================
+        //  Function stripNonAlphaChars
+        //  
+        //  Returns string with leading and trailing spaces and punctuation removed.
+        //--------------------------------------------------------------------------
 
         function stripNonAlphaChars($str)
         {
