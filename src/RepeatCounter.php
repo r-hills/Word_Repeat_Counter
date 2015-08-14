@@ -14,13 +14,13 @@
             $count = 0; 
             $output_array = array(); 
 
-            // If input strings are empty exit function
+            // If input strings are empty return error and exit function
             if ( $string_of_words == "" || $match_word == "") { 
                 array_push($output_array, "Error: Both fields must have entries!", -1); 
                 return $output_array;
             }
 
-            // If input match_word contains non-alpha chars
+            // If input match_word contains non-alpha chars return error and exit function
             if ( ! (ctype_alpha($match_word)) ) { 
                 array_push($output_array, "Error: Search word must only contain letters!", -1); 
                 return $output_array;
@@ -39,18 +39,22 @@
 
                 foreach ( $string_array as $token ) {
 
+                    // Format tokenized strings to strip non-alpha characters
                     $token = $this->stripNonAlphaChars($token); 
 
+                    // Count number of whole word matches
                     if( $match_word == $token ) {
                         $count++;
                     }
 
                 }
             } else {
+                // If input match_word is not found in our dictionary return error and exit function
                 array_push($output_array,"Error: Search word not found in our dictionary!", -1);
                 return $output_array;
             }
 
+            // Prepare output strings for return results
             if ( $count == 0 ) { 
                 $out_string = "Word was not found in the input string of words!";
             } else {
