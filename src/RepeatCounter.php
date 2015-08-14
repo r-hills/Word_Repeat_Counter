@@ -5,8 +5,10 @@
  
         function countRepeats($string_of_words, $match_word)
         {
-            // WARNING! *************************************************************
+            // WARNING! ****************************************************************
             // The following line must be uncommented for use locally on Windows PCs
+            // in order to use the local dictionary function. Replace the path listed 
+            // with the Windows path of your working diredtory.  
             
             // set_include_path('C:\\uniserver\\www\\word_repeat');
 
