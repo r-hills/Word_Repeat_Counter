@@ -30,6 +30,18 @@
             $this->assertEquals(0, $result);
         }
 
+        function test_countRepeats_mixedCaseInput()
+        {
+            $test_RepeatCounter = new RepeatCounter;
+            $words_string = "iS it A STring of woRds";
+            $match_word = "is";
+
+            $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
+
+            $this->assertEquals(1, $result);
+        }
+
+
     }
 
 ?>
