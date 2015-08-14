@@ -6,11 +6,11 @@ Prompts user to enter a string, list of words, and a single word to search and d
 
 ### Setup instructions
 1. Clone github directory
-2. Run 'composer install' from root directory (~/<directory name>/)
-3. Start PHP server from ~/<root>/web/ with localhost:<port#>
-4. Open http://localhost:<port#> in a web browser
+2. Run 'composer install' from root directory (~/[working directory name]/)
+3. Start PHP server from ~/[working directory name]/web/ with localhost:[port#]
+4. Open http://localhost:[port#] in a web browser
 
-*NOTE: Windows users who want to run this locally on their Windows PC MUST uncomment the line of code at the top of the ReadCounter.php file for set_include_path() and replace the path listed with their working directory!
+*NOTE: Windows users who want to run this locally on their Windows PC MUST uncomment the line of code at the top of the ReadCounter.php file for set_include_path() and replace the path listed with the path to their working directory, in order to use the local dictionary file. (We now see the wisdom of using an online dictionary, and this will be rewritten to use one at some point....later).
 
 ### Technologies Used
 
