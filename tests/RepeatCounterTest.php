@@ -18,7 +18,17 @@
             //Assert
             $this->assertEquals(0, $result);
         }
+        
+        function test_countRepeats_noMatchString()
+        {
+            $test_RepeatCounter = new RepeatCounter;
+            $words_string = "This is a string!";
+            $match_word = "";
 
+            $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
+
+            $this->assertEquals(0, $result);
+        }
 
     }
 
