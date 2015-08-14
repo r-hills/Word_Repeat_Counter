@@ -17,7 +17,7 @@ OUTPUT: Match_number: 1
 
 4. Input includes non-alpha characters
 INPUT:  Word_String: "~This is + junk!!"        
-        Word_to_match: "is?"       
+        Word_to_match: ">is?"       
 OUTPUT: Match_number: 0
 
 5. Match-word is not an actual word
