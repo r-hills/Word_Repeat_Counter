@@ -16,7 +16,7 @@
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
             //Assert
-            $this->assertEquals(0, $result);
+            $this->assertEquals(-1, $result[1]);
         }
         
         function test_countRepeats_noMatchString()
@@ -27,7 +27,7 @@
 
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
-            $this->assertEquals(0, $result);
+            $this->assertEquals(-1, $result[1]);
         }
 
         function test_countRepeats_mixedCaseInput()
@@ -38,7 +38,7 @@
 
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
-            $this->assertEquals(1, $result);
+            $this->assertEquals(1, $result[1]);
         }
 
         function test_countRepeats_inputNonAlphaChars()
@@ -49,7 +49,7 @@
 
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
-            $this->assertEquals(0, $result);
+            $this->assertEquals(-1, $result[1]);
         }
 
         function test_countRepeats_inputNotActualWord()
@@ -60,7 +60,7 @@
 
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
-            $this->assertEquals(0, $result);
+            $this->assertEquals(-1, $result[1]);
         }
 
          function test_countRepeats_stringBeginsWithMatchWord()
@@ -71,7 +71,7 @@
 
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
-            $this->assertEquals(1, $result);
+            $this->assertEquals(1, $result[1]);
         }       
 
          function test_countRepeats_stringEndsWithMatchString()
@@ -82,7 +82,7 @@
 
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
-            $this->assertEquals(1, $result);
+            $this->assertEquals(1, $result[1]);
         } 
 
          function test_countRepeats_matchWordIsPartOfLargerWord()
@@ -93,7 +93,7 @@
 
             $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
 
-            $this->assertEquals(1, $result);
+            $this->assertEquals(1, $result[1]);
         } 
 
     }

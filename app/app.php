@@ -32,6 +32,22 @@
     });
 
 
+    $app->get("/results", function() use ($app)  {
+        
+        $my_repeat_counter = new RepeatCounter();
+        
+        $input_string = $_GET['string'];
+        $results = $my_repeat_counter->countRepeats($input_string, $_GET['word']);
+
+        $word = $results[0];
+        $count = $results[1];
+        $string_count = (string) $count;
+
+        return $app['twig']->render('results.html.twig', 
+            array('input_string' => $input_string, 'word' => $word, 'string_count' => $string_count, 'count' => $count)
+        );
+    });
+
 
     return $app;
 

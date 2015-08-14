@@ -5,17 +5,26 @@
  
         function countRepeats($string_of_words, $match_word)
         {
-            // must be uncommented for use locally on Windows PCs
+            // WARNING! *************************************************************
+            // The following line must be uncommented for use locally on Windows PCs
+            
             // set_include_path('C:\\uniserver\\www\\word_repeat');
 
             // Variable declaration
             $count = 0; 
+            $output_array = array(); 
 
             // If input strings are empty exit function
-            if ( $string_of_words == "" || $match_word == "") { return 0; }
+            if ( $string_of_words == "" || $match_word == "") { 
+                array_push($output_array, "Error: Both fields must have entries!", -1); 
+                return $output_array;
+            }
 
             // If input match_word contains non-alpha chars
-            if ( ! (ctype_alpha($match_word)) ) { return 0; } 
+            if ( ! (ctype_alpha($match_word)) ) { 
+                array_push($output_array, "Error: Search word must only contain letters!", -1); 
+                return $output_array;
+            } 
 
             // Format input strings
             $string_of_words = strtolower($string_of_words);
@@ -24,7 +33,7 @@
             $string_array = explode(" ", $string_of_words);
 
             // Create dictionary array to verify match-word is an actual word
-            $dictionary_array = file('./../dictionary.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            $dictionary_array = file('dictionary.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
             if ( in_array($match_word, $dictionary_array) === true ) {
 
@@ -37,10 +46,20 @@
                     }
 
                 }
+            } else {
+                array_push($output_array,"Error: Search word not found in our dictionary!", -1);
+                return $output_array;
             }
 
-            return $count; 
+            if ( $count == 0 ) { 
+                $out_string = "Word was not found in the input string of words!";
+            } else {
+                $out_string = "Your word \"" . $match_word . "\" was found!";
+            }
 
+            array_push($output_array, $out_string, $count); 
+
+            return $output_array;
         }
 
 
