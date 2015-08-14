@@ -63,6 +63,38 @@
             $this->assertEquals(0, $result);
         }
 
+         function test_countRepeats_stringBeginsWithMatchWord()
+        {
+            $test_RepeatCounter = new RepeatCounter;
+            $words_string = "Is it a string?";
+            $match_word = "is";
+
+            $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
+
+            $this->assertEquals(1, $result);
+        }       
+
+         function test_countRepeats_stringEndsWithMatchString()
+        {
+            $test_RepeatCounter = new RepeatCounter;
+            $words_string = "A string of words this is";
+            $match_word = "is";
+
+            $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
+
+            $this->assertEquals(1, $result);
+        } 
+
+         function test_countRepeats_matchWordIsPartOfLargerWord()
+        {
+            $test_RepeatCounter = new RepeatCounter;
+            $words_string = "This is a string, or isn't it?";
+            $match_word = "is";
+
+            $result = $test_RepeatCounter->countRepeats($words_string, $match_word);
+
+            $this->assertEquals(1, $result);
+        } 
 
     }
 

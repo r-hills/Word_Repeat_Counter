@@ -8,10 +8,8 @@
             // must be uncommented for use locally on Windows PCs
             set_include_path('C:\\uniserver\\www\\word_repeat');
 
-
             // Variable declaration
             $count = 0; 
-            $string_array = array(); 
 
             // If input strings are empty exit function
             if ( $string_of_words == "" || $match_word == "") { return 0; }
@@ -26,14 +24,13 @@
             $string_array = explode(" ", $string_of_words);
 
             // Create dictionary array to verify match-word is an actual word
-            // $dictionary = file_get_contents("./..dictionary.txt","..\\");
-            // $dictionary_array = explode("\n", $dictionary);
-
             $dictionary_array = file('dictionary.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
             if ( in_array($match_word, $dictionary_array) === true ) {
 
                 foreach ( $string_array as $token ) {
+
+                    $token = $this->stripNonAlphaChars($token); 
 
                     if( $match_word == $token ) {
                         $count++;
@@ -43,6 +40,17 @@
             }
 
             return $count; 
+
+        }
+
+        //=================================================================
+        //  Function for stripping all punctuation and spaces from string
+        //-----------------------------------------------------------------
+
+        function stripNonAlphaChars($str)
+        {
+            // Replaces any non-alpha characters with nothing ''.
+            return preg_replace('/[^[:alpha:]]/', '', $str);
 
         }
 

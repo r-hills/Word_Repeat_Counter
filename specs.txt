@@ -40,17 +40,7 @@ INPUT:  Word_String: "This is a string, or isn't it?"
         Word_to_match: "is"       
 OUTPUT: Match_number: 1
 
-9. Match-word
 
-
-
-
-
-
-
-INPUT:  Word_String: ""        
-        Word_to_match: ""       
-OUTPUT: Match_number: 
 
 
 
