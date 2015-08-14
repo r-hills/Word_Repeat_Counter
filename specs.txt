@@ -1,0 +1,58 @@
+Test input and output for word repeat counter program Count_Repeat.  
+
+1. No input for string of words: 
+INPUT:  Words_string ""     
+        Word_to_match "bob"
+OUTPUT: Matches_number: 0
+
+2. No input word to match in string:
+INPUT:  Word_String: "This is a string!"        
+        Word_to_match: ""       
+OUTPUT: Match_number: 0
+
+3. Mixed case input
+INPUT:  Word_String: "iS it A STring of woRds"        
+        Word_to_match: "is"       
+OUTPUT: Match_number: 1
+
+4. Input includes non-alpha characters
+INPUT:  Word_String: "~This is + junk!!"        
+        Word_to_match: "is?"       
+OUTPUT: Match_number: 0
+
+5. Match-word is not an actual word
+INPUT:  Word_String: "Is sdfg a word?"        
+        Word_to_match: "sdfg"       
+OUTPUT: Match_number: 0
+
+6. Sentence starts with match-word
+INPUT:  Word_String: "Is it a string?"        
+        Word_to_match: "is"       
+OUTPUT: Match_number: 1
+
+7. Sentence ends with match-word
+INPUT:  Word_String: "A string of words this is"        
+        Word_to_match: "is"       
+OUTPUT: Match_number: 1
+
+8. Match-word is part of another word (Ex. "is" in "This")
+INPUT:  Word_String: "This is a string, or isn't it?"        
+        Word_to_match: "is"       
+OUTPUT: Match_number: 1
+
+9. Match-word
+
+
+
+
+
+
+
+INPUT:  Word_String: ""        
+        Word_to_match: ""       
+OUTPUT: Match_number: 
+
+
+
+
+
